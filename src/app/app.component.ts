@@ -14,8 +14,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {} 
 
   fetchData() {
-    const url = 'https://localhost:7067/GetAllCards';
-//syncgelioswisolbe:4440
+    const url = 'https://syncgelioswisolbe.mygps.ge:4440/GetAllCards';
     this.http.get(url).subscribe({
  
     next: (data) => {
