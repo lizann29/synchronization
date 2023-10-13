@@ -10,25 +10,25 @@ import Swal from 'sweetalert2';
 
 export class AppComponent {
   title = 'synchronization';
-
+  isLoading = false;
   constructor(private http: HttpClient) {} 
 
   fetchData() {
-    const url = 'https://syncgelioswisolbe.mygps.ge:4440/GetAllCards';
+    this.isLoading = true; 
+    const url = 'https://localhost:7067/GetAllCards';
+
     this.http.get(url).subscribe({
- 
-    next: (data) => {
-        // console.log(data);
+      next: (data) => {
+        this.isLoading = false; 
         Swal.fire({
           icon: 'success',
           title: 'Success!',
           text: 'Synchronization completed successfully',
           confirmButtonColor: 'rgb(0, 128, 0)',
-
         });
       },
-      error:
-      (error) => {
+      error: (error) => {
+        this.isLoading = false;
         console.error(error);
         Swal.fire({
           icon: 'error',
@@ -37,7 +37,6 @@ export class AppComponent {
           confirmButtonColor: 'rgb(255, 0, 0)',
         });
       }
-  });
+    });
   }
 }
-

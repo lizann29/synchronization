@@ -4,12 +4,20 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<div class="container-fluid">
-  <div class="row ">
-      <div class="col" (click)="fetchData()">
-          <a href="" ></a>
-          <img src="assets/sync.svg" alt="sync picture">
-          <h1>Synchronization</h1>
-      </div>
+
+<div *ngIf="isLoading; else content" class="loading">
+  <div class="loading-text">  Loading...
+    <i class="fas fa-spinner fa-pulse ml-2"></i> 
   </div>
 </div>
+
+<ng-template #content>
+  <div class="container-fluid">
+    <div class="row ">
+        <div class="col" (click)="fetchData()">
+            <img src="assets/sync.svg" alt="sync picture">
+            <h1>Synchronization</h1>
+        </div>
+    </div>
+  </div>  
+</ng-template>

@@ -28,3 +28,27 @@ cursor: pointer;
 width: 100px;
 margin-bottom: 10px;
 }
+
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .loading-text {
+    font-size: 24px;
+    color: #333; /* Text color */
+    background-color: #fff; /* Background color for the loading message */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the message box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for a raised effect */
+  }
+  
